@@ -501,7 +501,7 @@ void RCSwitch::send(uint64_t code, unsigned int length) {
   Serial.println("internal sending");
   for (int nRepeat = 0; nRepeat < nRepeatTransmit; nRepeat++) {
     for (int i = length-1; i >= 0; i--) {
-      if (code & (1L << i))
+      if (code & (1ull << i))
         this->transmit(protocol.one);
       else
         this->transmit(protocol.zero);
@@ -536,7 +536,7 @@ void RCSwitch::transmit(HighLow pulses) {
 
 void RCSwitch::transmitSpecial() {
   digitalWrite(this->nTransmitterPin, LOW);
-  delayMicroseconds(8640);
+  delayMicroseconds(8195);
   digitalWrite(this->nTransmitterPin, HIGH);
   delayMicroseconds(4680);
   digitalWrite(this->nTransmitterPin, LOW);

@@ -26,15 +26,23 @@ void loop() {
    Ch 14 Down 2: 202761678396 / 0010111100110101100010011010111000111100
 
    Ch 14 Stop:   202761678421 / 0010111100110101100010011010111001010101
+
+   Ch 15 Up   202761678609, 202761678622
+   Ch 15 Stop 202761678677
+   Ch 15 Down 202761678643, 202761678652
  */
+
+static const uint64_t CH_15_UP_1 = 202761678609ull;
+static const uint64_t CH_15_UP_2 = 202761678622ull;
+
 void test() {
   uint32_t time = millis();
   Serial.print("sending...");
-  while(millis() - time  < 2000) {
-    mySwitch.send(202761678387ULL, 40);
-    mySwitch.send(202761678396ULL, 40);
-    yield();
-  }
+  
+  mySwitch.send(CH_15_UP_1, 40);
+  mySwitch.send(CH_15_UP_2, 40);
+  mySwitch.send(CH_15_UP_2, 40);
+  
   Serial.println("done.");
   while(true) {
     yield();
