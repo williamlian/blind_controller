@@ -11,14 +11,14 @@ RCSwitch mySwitch = RCSwitch();
 void setup() {
   Serial.begin(74880);
   
-  //mySwitch.enableReceive(14);
-  mySwitch.enableTransmit(5);
+  mySwitch.enableReceive(14);
+  //mySwitch.enableTransmit(5);
 }
 
 
 void loop() {
-  //capture();
-  test();
+  capture();
+  //test();
 }
 
 /*
@@ -53,7 +53,12 @@ void capture() {
     memset(bits, 0, 41);
     to40Bit(bits, mySwitch.getReceivedValue());
     Serial.println(bits);
-
+    Serial.println("Raw data");
+    unsigned int* raw = mySwitch.getReceivedRawdata();
+    for(int i = 0; i < RCSWITCH_MAX_CHANGES; i++) {
+      Serial.printf("%d, ", raw[i]);
+    }
+    Serial.println("\n");
     mySwitch.resetAvailable();
   }
 }
