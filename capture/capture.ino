@@ -22,9 +22,12 @@ void loop() {
 }
 
 /*
+ * Ch 9 Up  : 202761677073 
+ * Ch 9 Stop: 202761677141
+ * Ch 9 Down: 202761677107 
+ * 
    Ch 14 Down 1: 202761678387 / 0010111100110101100010011010111000110011
    Ch 14 Down 2: 202761678396 / 0010111100110101100010011010111000111100
-
    Ch 14 Stop:   202761678421 / 0010111100110101100010011010111001010101
 
    Ch 15 Up   202761678609, 202761678622
@@ -61,12 +64,12 @@ void capture() {
     memset(bits, 0, 41);
     to40Bit(bits, mySwitch.getReceivedValue());
     Serial.println(bits);
-    Serial.println("Raw data");
+    /*Serial.println("Raw data");
     unsigned int* raw = mySwitch.getReceivedRawdata();
     for(int i = 0; i < RCSWITCH_MAX_CHANGES; i++) {
       Serial.printf("%d, ", raw[i]);
     }
-    Serial.println("\n");
+    Serial.println("\n");*/
     mySwitch.resetAvailable();
   }
 }
