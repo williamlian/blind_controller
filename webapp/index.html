@@ -1,0 +1,58 @@
+<html>
+    <head>
+        <link rel="apple-touch-icon" href="app-icon.png">
+        <meta name="apple-mobile-web-app-title" content="窗帘">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="default">
+        <meta name="apple-touch-fullscreen" content="yes">
+        <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+        <link rel="stylesheet" href="app-base.css">
+        <link rel="stylesheet" href="blinds.css">
+
+        <script type="module" src="blinds.js"></script> 
+    </head>
+    <body>
+        <div id="app-container">
+            <div id="app-header" class="navbar-light bg-light">
+                <!-- ------------ App Header Space ------------- -->
+                
+                <div class="nav-brand">窗帘遥控器</div>
+
+                <!-- --------- End App Header Space ------------ -->
+            </div>
+
+            <div id="app-content">
+                <!-- ------------ App Content Space -------------- -->
+                
+                <div class="section-header">卧室</div>
+                <div class="buttons">
+                    <button onclick="send(BEDROOM, 'up')">UP</button>
+                    <button onclick="send(BEDROOM, 'up')">DOWN</button>
+                    <button onclick="send(BEDROOM, 'up')">STOP</button>
+                    <button onclick="send(BEDROOM, 'up')">CLOSE</button>
+                </div>
+
+                <div class="section-header">客厅</div>
+                <div class="buttons">
+                    <button onclick="send(LIVING, 'up')">UP</button>
+                    <button onclick="send(LIVING, 'up')">DOWN</button>
+                    <button onclick="send(LIVING, 'up')">STOP</button>
+                    <button onclick="send(LIVING, 'up')">CLOSE</button>
+                </div>
+
+                <!-- ---------- End App Content Space ------------ -->
+            </div>
+            
+            <div id="app-footer" class="navbar-light bg-light">
+                <!-- ------------ App Footer Space ------------- -->
+                
+                <!-- --------- End App Footer Space ------------ -->
+            </div>
+
+        </div>
+    </body>
+</html>
